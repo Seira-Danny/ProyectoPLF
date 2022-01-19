@@ -34,7 +34,6 @@ function crearTabla(jugadores) {
                     'rgba(255, 159, 64, 1)'
                 ],
 
-
                 borderWidth: 5
 
             }]
