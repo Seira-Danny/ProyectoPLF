@@ -15,7 +15,12 @@
     <!-- https://fontawesome.com/ -->
     <link href="css/templatemo-diagoona.css" rel="stylesheet" />
 
-    <script src="js/Main.js"></script>
+    <script src="Persona.js"></script>
+    <script src="Ficha.js"></script>
+    <script src="Funciones.js"></script>
+    <script src="Main.js"></script>
+
+
     <script src="node_modules/chart.js/dist/chart.js"></script>
 
     <script type="text/javascript">
@@ -133,7 +138,8 @@ https://templatemo.com/tm-550-diagoona
                     </section>
 
                     <div class="text-right">
-                        <button type="submit" onclick="getRandom()" class="btn btn-big btn-primary">Presiona para
+                        <button type="submit" class="btn btn-big btn-primary" id="crear">Presiona
+                            para
                             simular</button>
                     </div>
                     <div class="demo_wrap">
@@ -150,10 +156,10 @@ https://templatemo.com/tm-550-diagoona
                             let end = document.getElementById('end').value;
                             //document.getElementById('number').innerHTML = 'The random number is: ' + getRandomBetween(parseInt(start), parseInt(end));
 
-                            const name1 = document.getElementById('name1').value;
-                            const name2 = document.getElementById('name2').value;
-                            const name3 = document.getElementById('name3').value;
-                            const name4 = document.getElementById('name4').value;
+                            // const name1 = document.getElementById('name1').value;
+                            // const name2 = document.getElementById('name2').value;
+                            // const name3 = document.getElementById('name3').value;
+                            // const name4 = document.getElementById('name4').value;
 
                             aux = 0;
                             num1 = getRandomBetween(parseInt(start), parseInt(end))
@@ -163,45 +169,47 @@ https://templatemo.com/tm-550-diagoona
 
 
 
-                            var ctx = document.getElementById('myChart').getContext('2d');
-                            const soy = "Rojillo"
-                            var myChart = new Chart(ctx, {
-                                type: 'bar',
-                                data: {
-                                    labels: [name1, name2, name3, name4],
-                                    datasets: [{
-                                        label: 'Numero de victorias',
-                                        data: [num1, num2, num3, num4],
-                                        backgroundColor: [
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(54, 162, 235, 0.2)',
-                                            'rgba(255, 206, 86, 0.2)',
-                                            'rgba(75, 192, 192, 0.2)',
-                                            'rgba(153, 102, 255, 0.2)',
-                                            'rgba(255, 159, 64, 0.2)'
-                                        ],
-                                        borderColor: [
-                                            'rgba(255, 99, 132, 1)',
-                                            'rgba(54, 162, 235, 1)',
-                                            'rgba(255, 206, 86, 1)',
-                                            'rgba(75, 192, 192, 1)',
-                                            'rgba(153, 102, 255, 1)',
-                                            'rgba(255, 159, 64, 1)'
-                                        ],
+                            // var ctx = document.getElementById('myChart').getContext('2d');
+                            // const soy = "Rojillo"
+                            // var myChart = new Chart(ctx, {
+                            //     type: 'bar',
+                            //     data: {
+                            //         labels: [name1, name2, name3, name4],
+                            //         datasets: [{
+                            //             label: 'Numero de victorias',
+                            //             data: [num1, num2, num3, num4],
+                            //             backgroundColor: [
+                            //                 'rgba(255, 99, 132, 0.2)',
+                            //                 'rgba(54, 162, 235, 0.2)',
+                            //                 'rgba(255, 206, 86, 0.2)',
+                            //                 'rgba(75, 192, 192, 0.2)',
+                            //                 'rgba(153, 102, 255, 0.2)',
+                            //                 'rgba(255, 159, 64, 0.2)'
+                            //             ],
+                            //             borderColor: [
+                            //                 'rgba(255, 99, 132, 1)',
+                            //                 'rgba(54, 162, 235, 1)',
+                            //                 'rgba(255, 206, 86, 1)',
+                            //                 'rgba(75, 192, 192, 1)',
+                            //                 'rgba(153, 102, 255, 1)',
+                            //                 'rgba(255, 159, 64, 1)'
+                            //             ],
 
-                                        borderWidth: 5
-                                    }]
-                                },
-                                options: {
-                                    scales: {
-                                        yAxes: [{
-                                            ticks: {
+                            //             borderWidth: 5
+                            //         }]
+                            //     },
+                            //     options: {
+                            //         scales: {
+                            //             yAxes: [{
+                            //                 ticks: {
 
-                                            }
-                                        }]
-                                    }
-                                }
-                            });
+                            //                 }
+                            //             }]
+                            //         }
+                            //     }
+                            // });
+
+
                         }
 
 
@@ -218,23 +226,6 @@ https://templatemo.com/tm-550-diagoona
                         }
 
                     </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -291,6 +282,7 @@ https://templatemo.com/tm-550-diagoona
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.backstretch.min.js"></script>
     <script src="js/templatemo-script.js"></script>
+    <script src="Prueba.js"></script>
 </body>
 
 </html>

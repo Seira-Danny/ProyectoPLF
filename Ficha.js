@@ -6,35 +6,35 @@
  */
 class Ficha {
     constructor(lado1, lado2) {
-            this.face1 = lado1;
-            this.face2 = lado2;
-            this.numeroAlto = 0;
+        this.face1 = lado1;
+        this.face2 = lado2;
+        this.numeroAlto = 0;
 
-            if (this.face1 === this.face2) {
-                this.numeroAlto = this.face1
-            } else if (this.face1 > this.face2) {
-                this.numeroAlto = this.face1;
-            } else {
-                this.numeroAlto = this.face2;
-            }
+        if (this.face1 === this.face2) {
+            this.numeroAlto = this.face1
+        } else if (this.face1 > this.face2) {
+            this.numeroAlto = this.face1;
+        } else {
+            this.numeroAlto = this.face2;
         }
-        /**
-         *Metodo que invierte las posiciones
-         *de los puntos de la ficha 
-         */
+    }
+    /**
+     *Metodo que invierte las posiciones
+     *de los puntos de la ficha 
+     */
     invertir() {
-            let temp = this.face1;
-            let face2 = this.face2;
+        let temp = this.face1;
+        let face2 = this.face2;
 
-            this.face1 = face2;
-            this.face2 = temp;
+        this.face1 = face2;
+        this.face2 = temp;
 
-        }
-        /**
-         *Comprueba si una ficha es par o no 
-         */
+    }
+    /**
+     *Comprueba si una ficha es par o no 
+     */
     esPar() {
         return this.face1 === this.face2;
     }
 }
-module.exports = Ficha;
+// module.exports = Ficha;

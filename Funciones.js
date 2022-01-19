@@ -1,4 +1,3 @@
-const Ficha = require("./Ficha.js");
 
 /**
  *Evalua que jugador se a quedado sin fichas 
@@ -27,5 +26,5 @@ const crearFichas = () => {
     return fichas;
 };
 
-exports.crearFichas = crearFichas;
-exports.sinFichas = sinFichas;
+// exports.crearFichas = crearFichas;
+// exports.sinFichas = sinFichas;

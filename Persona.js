@@ -94,5 +94,5 @@ class Persona {
         }
     }
 }
-module.exports = Persona; //Con esto le indicamos a Node.js 
+//module.exports = Persona; //Con esto le indicamos a Node.js 
 //Que usamos un módulo
