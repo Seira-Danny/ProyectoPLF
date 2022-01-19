@@ -6,7 +6,10 @@ function crearTabla(jugadores) {
     const name3 = document.getElementById('name3').value;
     const name4 = document.getElementById('name4').value;
     var ctx = document.getElementById('myChart').getContext('2d');
-
+    var button = document.getElementById("submitButton");
+    submitButton.addEventListener("click", function () {
+        myChart.destroy();
+    });
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -31,10 +34,13 @@ function crearTabla(jugadores) {
                     'rgba(255, 159, 64, 1)'
                 ],
 
+
                 borderWidth: 5
+
             }]
         },
         options: {
+            responsive: true,
             scales: {
                 yAxes: [{
                     ticks: {

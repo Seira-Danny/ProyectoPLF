@@ -1,4 +1,6 @@
-
+const Persona = require("./Persona.js");
+const Ficha = require("./Ficha.js");
+const Funciones = require("./Funciones.js");
 
 //Declaramos a los jugadores de la partida
 const jugadores = [
