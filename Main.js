@@ -98,5 +98,4 @@ for (let numberPartida = 0; numberPartida < 1000; numberPartida++) {
     }
     jugadores[Funciones.sinFichas(jugadores)].ganadas += 1;
 }
-const data = jugadores;
-console.log(data);
+console.log(jugadores);

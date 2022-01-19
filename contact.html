@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Diagoona Template - Contact page</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
-    <link href="fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <title>Proyecto PLF - Simulación</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+    <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- https://getbootstrap.com/ -->
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" />
+    <!-- https://fontawesome.com/ -->
     <link href="css/templatemo-diagoona.css" rel="stylesheet" />
-<!--
+
+    <script src="js/Main.js"></script>
+    <script src="node_modules/chart.js/dist/chart.js"></script>
+
+    <script type="text/javascript">
+        function alerta() {
+
+            alert("name");
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <style>
+        .demo_wrap {
+            background: url('img/hola.jpg');
+            position: relative;
+            overflow: hidden;
+            padding: 16px;
+
+            text-decoration-color: black;
+        }
+
+        .demo_wrap h1 {
+            padding: 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .demo_wrap img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: auto;
+            opacity: 0.6;
+        }
+    </style>
+    <!--
 
 TemplateMo 550 Diagoona
 
@@ -18,6 +59,7 @@ https://templatemo.com/tm-550-diagoona
 
 -->
 </head>
+
 <body>
     <div class="tm-container">
         <div>
@@ -26,81 +68,220 @@ https://templatemo.com/tm-550-diagoona
                     <div class="tm-site-header media">
                         <i class="fas fa-umbrella-beach fa-3x mt-1 tm-logo"></i>
                         <div class="media-body">
-                            <h1 class="tm-sitename text-uppercase">diagoona</h1>
-                            <p class="tm-slogon">new bootstrap template</p>
-                        </div>        
+                            <h1 class="tm-sitename text-uppercase">Simulación de MonteCarlo</h1>
+                            <p class="tm-slogon">para el juego de dominó</p>
+                        </div>
                     </div>
                 </div>
                 <div class="tm-col-right">
                     <nav class="navbar navbar-expand-lg" id="tm-main-nav">
-                        <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
-                            data-toggle="collapse" data-target="#navbar-nav" 
-                            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" data-toggle="collapse"
+                            data-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false"
+                            aria-label="Toggle navigation">
                             <span><i class="fas fa-bars"></i></span>
                         </button>
                         <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
                             <ul class="navbar-nav text-uppercase">
                                 <li class="nav-item">
-                                    <a class="nav-link tm-nav-link" href="index.html">Home</a>
+                                    <a class="nav-link tm-nav-link" href="index.html">Dashboard</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link tm-nav-link" href="about.html">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link tm-nav-link" href="services.html">Services</a>
-                                </li>                            
                                 <li class="nav-item active">
-                                    <a class="nav-link tm-nav-link" href="contact.html">Contact <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link tm-nav-link" href="contact.html">Simulación <span
+                                            class="sr-only">(current)</span></a>
                                 </li>
-                            </ul>                            
-                        </div>                        
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="about.html">Acerca de</a>
+                                </li>
+
+                            </ul>
+                        </div>
                     </nav>
                 </div>
             </div>
-            
+
             <div class="tm-row">
                 <div class="tm-col-left"></div>
-                <main class="tm-col-right tm-contact-main"> <!-- Content -->
+                <main class="tm-col-right tm-contact-main">
+                    <!-- Content -->
                     <section class="tm-content tm-contact">
-                        <h2 class="mb-4 tm-content-title">Contact Us</h2>
-                        <p class="mb-85">Etiam et egestas arcu. Fusce congue quis elit vitae commodo. Cras neque mauris, vehicula in ipsum sit amet, faucibus aliquam arcu.</p>
+                        <h2 class="mb-4 tm-content-title">Introduce el nombre de los jugadores:</h2>
                         <form id="contact-form" action="" method="POST">
                             <div class="form-group mb-4">
-                                <input type="text" name="name" class="form-control" placeholder="Name" required="" />
+                                <input type="text" name="name" class="form-control" id="name1"
+                                    placeholder="Nombre del jugador 1" required="true" />
                             </div>
                             <div class="form-group mb-4">
-                                <input type="email" name="email" class="form-control" placeholder="Email" required="" />
+                                <input type="text" name="name2" class="form-control" id="name2"
+                                    placeholder="Nombre del jugador 2" required="true" />
                             </div>
-                            <div class="form-group mb-5">
-                                <textarea rows="6" name="message" class="form-control" placeholder="Message..." required=""></textarea>
+                            <div class="form-group mb-4">
+                                <input type="text" name="name3" class="form-control" id="name3"
+                                    placeholder="Nombre del jugador 3" required="true" />
                             </div>
-                            <div class="text-right">
-                                <button type="submit" class="btn btn-big btn-primary">Send It</button>
+                            <div class="form-group mb-4">
+                                <input type="text" name="name4" class="form-control" id="name4"
+                                    placeholder="Nombre del jugador 4" required="true" />
                             </div>
+
+                            <div class="buttons">
+                                <h5 class="mb-4 tm-content-title">Introduce el numero de juegos:</h5>
+                                <input type="number" class="end" id="end">
+
+                            </div>
+                            <h2 class="number" id="number"></h2>
                         </form>
                     </section>
+
+                    <div class="text-right">
+                        <button type="submit" onclick="getRandom()" class="btn btn-big btn-primary">Presiona para
+                            simular</button>
+                    </div>
+                    <div class="demo_wrap">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+                    <script>
+
+                        function getRandom() {
+
+                            let start = 0;
+                            let start2 = 4;
+                            let end = document.getElementById('end').value;
+                            //document.getElementById('number').innerHTML = 'The random number is: ' + getRandomBetween(parseInt(start), parseInt(end));
+
+                            const name1 = document.getElementById('name1').value;
+                            const name2 = document.getElementById('name2').value;
+                            const name3 = document.getElementById('name3').value;
+                            const name4 = document.getElementById('name4').value;
+
+                            aux = 0;
+                            num1 = getRandomBetween(parseInt(start), parseInt(end))
+                            num2 = getRandomBetween(parseInt(start), parseInt(end))
+                            num3 = getRandomBetween(parseInt(start), parseInt(end))
+                            num4 = getRandomBetween(parseInt(start), parseInt(end))
+
+
+
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            const soy = "Rojillo"
+                            var myChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: [name1, name2, name3, name4],
+                                    datasets: [{
+                                        label: 'Numero de victorias',
+                                        data: [num1, num2, num3, num4],
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(255, 159, 64, 1)'
+                                        ],
+
+                                        borderWidth: 5
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                        }
+
+
+                        function getRandomBetween(start, end) {
+                            end = end - aux;
+                            numero = Math.floor(Math.random() * (end - start + 1)) + start;
+                            aux = aux + numero;
+                            return numero
+
+                        }
+
+                        function getRan(start, end) {
+                            return Math.floor(Math.random() * (end - start + 1)) + start;
+                        }
+
+                    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </main>
             </div>
-        </div>        
+        </div>
 
         <div class="tm-row">
-            <div class="tm-col-left text-center">            
+            <div class="tm-col-left text-center">
                 <ul class="tm-bg-controls-wrapper">
                     <li class="tm-bg-control active" data-id="0"></li>
                     <li class="tm-bg-control" data-id="1"></li>
                     <li class="tm-bg-control" data-id="2"></li>
-                </ul>            
-            </div>        
+                </ul>
+            </div>
             <div class="tm-col-right tm-col-footer">
                 <footer class="tm-site-footer text-right">
-                    <p class="mb-0">Copyright 2020 Diagoona Co. 
-                    
-                    | Design: <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-text-link">TemplateMo</a></p>
+                    <p class="mb-0">Copyright 2022 GitHub. | Diseño: <a rel="nofollow" target="_parent"
+                            href="https://github.com/Seira-Danny/ProyectoPLF" class="tm-text-link">Ir al repositorio
+                            web</a></p>
                 </footer>
-            </div>  
+            </div>
         </div>
 
-        <div class="tm-bg"> <!-- Diagonal background design -->
+        <div class="tm-bg">
+            <!-- Diagonal background design -->
             <div class="tm-bg-left"></div>
             <div class="tm-bg-right"></div>
         </div>
@@ -111,4 +292,5 @@ https://templatemo.com/tm-550-diagoona
     <script src="js/jquery.backstretch.min.js"></script>
     <script src="js/templatemo-script.js"></script>
 </body>
+
 </html>
